@@ -1,0 +1,151 @@
+//Davor Georgievski INKI850
+//Vnes na pole na koe se naogja kralicata i ispis na site mozni koi moze da gi bie
+//Resavanje na programata so koristenje na switch case i for ciklusi
+#include <cstdlib>
+#include <iostream>
+using namespace std;
+int main()
+{
+    // i e za char, j e za int
+    // i e brojac za bukvite, j e brojac za brojkite
+    char j,bukva; 
+    int broj,i; 
+    cout<<"Vnesete ja pozicijata na koja se naogja kralicata: "; //se vnesuva pozicija vo rang na tablata
+    cin>>bukva>>broj; //otkako vnesuvame, se vrsi proverka dali e vnesena tocna pozicija
+    if(((bukva<'a')||(bukva>'h'))&&((bukva<'A')||(bukva>'H'))||((broj<1)||(broj>8))) 
+    { 
+    cout<<"Vnesovte pogreshna pozicija. "<<endl; //dokolku navedeniot uslov e ispolnet, programata se prekinuva
+    }
+    else
+    {
+    cout<<"Kralicata moze da bie na polinjata: "<<endl; //dokolku se vnesi tocna pozicija programata prodolzuva
+    switch (bukva) //switch ciklus so koj se proveruva prvo za bukvite
+    { //so ovaj switch ciklus se opredeluvaat polinjata gore dolu levo i desno.
+        case 'A': for(i=1;i<=8;i++) //brojat odi od 1 do 8, bidejki tablicata e od 1 do 8
+        {
+            if((i<broj)||(i>broj)) //ako i e pomalo od broj ili e pogolemo, se ispisuva A i brojkata
+            cout<<"A"<<i<<","; 
+        } break;
+        case 'B': for(i=1;i<=8;i++)
+        {
+            if((i<broj)||(i>broj))
+            cout<<"B"<<i<<",";
+        } break;
+        case 'C': for(i=1;i<=8;i++)
+        {
+            if((i<broj)||(i>broj))
+            cout<<"C"<<i<<",";
+        } break;
+        case 'D': for(i=1;i<=8;i++)
+        {
+            if((i<broj)||(i>broj))
+            cout<<"D"<<i<<",";
+        } break;
+        case 'E': for(i=1;i<=8;i++)
+        {
+            if((i<broj)||(i>broj))
+            cout<<"E"<<i<<",";
+        } break;
+        case 'F': for(i=1;i<=8;i++)
+        {
+            if((i<broj)||(i>broj))
+            cout<<"F"<<i<<",";
+        } break;
+        case 'G': for(i=1;i<=8;i++)
+        {
+            if((i<broj)||(i>broj))
+            cout<<"G"<<i<<",";
+        } break;
+        case 'H': for(i=1;i<=8;i++)
+        {
+            if((i<broj)||(i>broj))
+            cout<<"H"<<i<<",";
+        } break;
+    }
+    switch (broj)
+    {
+        case 1: for(j='A';j<='H';j++) //brojacot pocnuva od bukva A i zavrsuva do H, soodvetno so sahovskata tabla
+        {
+            if((j<bukva)||(j>bukva)) //dokolku j e pomalo od bukva ili pogolemo
+            cout<<j<<"1"<<","; //se ispisuva bukvata i brojot 1 
+        } break;
+        case 2: for(j='A';j<='H';j++)
+        {
+            if((j<bukva)||(j>bukva))
+            cout<<j<<"2"<<",";
+        } break;
+        case 3: for(j='A';j<='H';j++)
+        {
+            if((j<bukva)||(j>bukva))
+            cout<<j<<"3"<<",";
+        } break;
+        case 4: for(j='A';j<='H';j++)
+        {
+            if((j<bukva)||(j>bukva))
+            cout<<j<<"4"<<",";
+        } break;
+        case 5: for(j='A';j<='H';j++)
+        {
+            if((j<bukva)||(j>bukva))
+            cout<<j<<"5"<<",";
+        } break;
+        case 6: for(j='A';j<='H';j++)
+        {
+            if((j<bukva)||(j>bukva))
+            cout<<j<<"6"<<",";
+        } break;
+        case 7: for(j='A';j<='H';j++)
+        {
+            if((j<bukva)||(j>bukva))
+            cout<<j<<"7"<<",";
+        } break;
+        case 8: for(j='A';j<='H';j++)
+        {
+            if((j<bukva)||(j>bukva))
+            cout<<j<<"8"<<",";
+        } break;
+    }
+    cout<<endl;
+    //4 for ciklusi, vo koi sto vo prviot promenlivite i i j se zgolemuvaat soodvetno dadeniot uslov
+    for(i=broj,j=bukva;i<=8,j<='H';i++,j++) // so for ciklusite se opredeluvaat poziiciite kako sto se lamferot
+        {                                   // koi isto taka moze kralicata da gi bie
+            if(i>8||j>'H'||i<1||j<'A') //i pocnuva od vneseniot broj, a j od vnesenata bukva
+            {                           // i se dvizi se do 8 i H soodvetno
+                break;
+            }
+        if(((i<broj)||(i>broj))&&((j<bukva)||(j>bukva))) //dokolku uslovot e ispolnet se ispisuva soodvetnoto pole
+        cout<<","<<j<<i;
+        }
+        
+        for(i=broj,j=bukva;i<=8,j<='H';i--,j++) //vo ovaj for ciklus i se namaluva dodeka j raste
+        {
+            if(i>8||j>'H'||i<1||j<'A')
+            {
+                break;
+            }
+            if(((i<broj)||(i>broj))&&((j<bukva)||(j>bukva)))
+            cout<<","<<j<<i;
+        }
+        
+        for(i=broj,j=bukva;i<=8,j<='H';i++,j--) //vo ovoj for ciklus i se zgolemuva dodeka j opagja
+        {
+            if(i>8||j>'H'||i<1||j<'A')
+            {
+                break;
+            }
+            if(((i<broj)||(i>broj))&&((j<bukva)||(j>bukva)))
+            cout<<","<<j<<i;
+        }
+        
+         for(i=broj,j=bukva;i<=8,j<='H';i--,j--) //vo ovoj for ciklus opagjaat dvete promenlivi
+        {
+            if(i>8||j>'H'||i<1||j<'A')
+            {
+                break;
+            }
+            if(((i<broj)||(i>broj))&&((j<bukva)||(j>bukva)))
+            cout<<","<<j<<i;
+        }
+    }
+    return EXIT_SUCCESS;
+}
